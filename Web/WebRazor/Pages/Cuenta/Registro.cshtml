@@ -1,0 +1,93 @@
+﻿@page
+@model WebRazor.Pages.Cuenta.RegistroModel
+@{
+}
+
+<header class="subhead">
+    <div class="container">
+        <div class="masthead-subheading">SC-701: Programación Web Avanzada</div>
+        <div class="masthead-heading text-uppercase">Caso Practico 2 - Grupo #4</div>
+    </div>
+</header>
+<section class="page-section bg-light">
+    <div class="container py-5 h-100">
+        <div class="card text-black">
+            <div class="col col-xl-10">
+                <div style="border-radius: 25px;">
+                    <div class="row g-0">
+                        <div class="col-md-6 col-lg-5 d-none d-md-block">
+                            <img src="/assets/img/LoginImage.jpg"
+                                 alt="login form" class="img-fluid" />
+                        </div>
+                        <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                            <div class="card-body text-black" style="border-radius: 25px;">
+                                <div class="d-flex align-items-center mb-3 pb-1">
+                                    <i class="bi bi-boxes" style="font-size: 3rem;color: #ff6219;"></i>
+                                    <span class="h3 fw-bold px-3 mb-0">Registro de usuario</span>
+
+                                </div>
+
+                                <form method="post">
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="bi bi-person-fill pb-4 me-2" style="font-size: 2rem"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <input type="text" asp-for="usuario.NombreUsuario" class="form-control" />
+                                            <label class="form-label" asp-for="usuario.NombreUsuario">Nombre de usuario</label>
+                                            <span asp-validation-for="usuario.NombreUsuario" class="text-danger"></span>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="bi bi-envelope-at-fill pb-4 me-2" style="font-size: 2rem"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <input type="email" asp-for="usuario.CorreoElectronico" class="form-control" />
+                                            <label class="form-label" asp-for="usuario.CorreoElectronico">Correo Electrónico</label>
+                                            <span asp-validation-for="usuario.CorreoElectronico" class="text-danger"></span>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+
+                                        <i class="bi bi-key-fill pb-4 me-2" style="font-size: 2rem"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <input type="password" asp-for="usuario.Contrasenia" class="form-control" />
+                                            <label class="form-label" asp-for="usuario.Contrasenia">Contraseña</label>
+                                            <span asp-validation-for="usuario.Contrasenia" class="text-danger"></span>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="bi bi-key-fill pb-4 me-2" style="font-size: 2rem"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <input type="password" asp-for="usuario.ConfirmarContrasenia" class="form-control" />
+                                            <label class="form-label" asp-for="usuario.ConfirmarContrasenia">Confirmar Contraseña</label>
+                                            <span asp-validation-for="usuario.ConfirmarContrasenia" class="text-danger"></span>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-check d-flex justify-content-center mb-5">
+                                        <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+                                        <label class="form-check-label" for="form2Example3">
+                                            He leído y acepto <a href="#!">los términos y condiciones de uso</a>
+                                        </label>
+                                    </div>
+
+                                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                        <button type="submit" class="btn btn-primary btn-lg">Registrarse</button>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

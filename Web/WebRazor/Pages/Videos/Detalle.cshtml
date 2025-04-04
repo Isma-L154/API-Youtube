@@ -1,0 +1,29 @@
+﻿@page
+@model WebRazor.Pages.Videos.DetalleModel
+@{
+}
+<header class="subhead">
+    <div class="container">
+        <div class="masthead-subheading">SC-701: Programación Web Avanzada</div>
+        <div class="masthead-heading text-uppercase">Recomendaciones de video</div>
+    </div>
+</header>
+<section class="page-section" id="services">
+    <div class="container">
+        <p class="h1"> @Model.video.Nombre</p>
+        <iframe class="youtube-video" src="https://www.youtube.com/embed/@Model.video.Id?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div>
+            <span class="badge rounded-pill bg-success">@Model.video.Canal</span>
+            <span class="badge rounded-pill bg-primary">@Model.video.Fecha</span>
+        </div>
+        <div class="bg-light youtube-descripcion">
+
+               
+            @(@Model.video.Descripción.Length > 300 ? @Model.video.Descripción.Substring(0, 300) : @Model.video.Descripción)...
+
+
+        </div>
+
+        <btn class="btn btn-primary mt-2" onClick="history.go(-1); return false;">Regresar</btn>
+        </section>   
+</div>

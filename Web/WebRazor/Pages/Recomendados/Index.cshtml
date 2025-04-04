@@ -1,0 +1,73 @@
+﻿@page
+@model IndexModel
+@{
+
+}
+<header class="subhead">
+    <div class="container">
+        <div class="masthead-subheading">SC-701: Programación Web Avanzada</div>
+        <div class="masthead-heading text-uppercase">Caso Practico 2 - Grupo #4</div>
+    </div>
+</header>
+<div class="container">
+<div class="d-sm-flex align-items-center justify-content-between mb-4 mt-4">
+    <h1 class="h1 mb-0 text-gray-800 text-center" >Listas Recomendadas</h1>
+    <div>
+            <a asp-page="./Agregar" class="btn btn-outline-primary">Agregar Lista</a>
+        </div>
+</div>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3  ">
+        <h6 class="m-0 font-weight-bold text-primary">Listas</h6>
+    </div>
+        @if(Model.listas != null)
+        {
+            foreach(var item in Model.listas)
+            {
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="ejemplo" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Descripcion</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>@item.Nombre</td>
+                                    <td>@item.Descripcion</td>
+                                    <td>
+                                        <a asp-page="./Detalle" asp-route-id="@item.Id" class="btn btn-outline-success">
+                                            Ver Lista
+                                        </a>
+
+                                        @if (Model.Rol == "2")
+                                        {
+                                            <a asp-page="./Editar" asp-route-id="@item.Id" class="btn btn-outline-primary">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </a>
+
+                                            <form id="deleteForm" method="post" asp-page-handler="Eliminar" asp-route-id="@item.Id" class="d-inline">
+                                                <button type="button" class="btn btn-outline-danger" title="Eliminar" onclick="confirmDeletion()">
+                                                    <i class="bi bi-trash-fill"></i>
+                                                </button>
+                                            </form>
+                                        }
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            }
+        }
+        
+
+</div>
+</div>
+<script src="~/js/EliminarLista.js" asp-append-version="true"></script>
+
+
